@@ -1,5 +1,15 @@
+:root {
+    --primary-color: #191970;
+    --secondary-color:aliceblue;
+}
+
 body {
-    background-color: #191970;
+    background-color: var(--primary-color);
+}
+
+.dark_theme{
+    --primary-color: black;
+    --secondary-color: orange;
 }
 
 .container {
@@ -14,58 +24,73 @@ body {
     width: 600px;
     margin: 100px auto;
     row-gap: 26px;
-    background-color: whitesmoke;
+    background-color: var(--secondary-color);
     border-radius: 8px;
     padding: 30px 22px;
 }
 
-h1{
+.theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
     font-size: 32px;
-    color: #191970;
+    color: var(--primary-color);
     font-weight: 600;
     text-align: left;
-    border-bottom: 1px solid #191970;
+    border-bottom: 1px solid var(--primary-color);
     padding-bottom: 20px;
+    width: 500px;
 }
 
-h2{
+img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+h2 {
     font-size: 25px;
-    color: #191970;
+    color: var(--primary-color);
     font-weight: 600;
     text-align: left;
 
 }
 
-.answers_div{
+.answers_div {
     display: flex;
     flex-direction: column;
     row-gap: 14px;
 }
 
-.answers_btn{
+.answers_btn {
     border-radius: 8px;
-    border: 1px solid #191970;
+    border: 1px solid var(--primary-color);
     cursor: pointer;
     padding: 8px;
     text-align: left;
-    color: #191970;
+    color: var(--primary-color);
     font-size: 16px;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
-.answers_btn:hover:not([disabled]){
+.answers_btn:hover:not([disabled]) {
     background-color: rgb(22, 21, 21);
-    color: aliceblue;
+    color: var(--secondary-color);
 }
 
-.answers_btn:disabled{
+.answers_btn:disabled {
     cursor: no-drop;
 }
 
-.next_btn{
+.next_btn {
     padding: 10px;
-    background-color: #191970;
-    color: aliceblue;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     border-radius: 8px;
     width: 120px;
@@ -75,10 +100,10 @@ h2{
     display: none;
 }
 
-.correct{
+.correct {
     background-color: rgb(25, 178, 25);
 }
 
-.incorrect{
+.incorrect {
     background-color: red;
 }

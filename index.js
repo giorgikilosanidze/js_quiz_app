@@ -91,11 +91,40 @@ const questions = [
     }
 ];
 
-
+const root = document.querySelector(":root");
+const image = document.querySelector("img");
 const h2 = document.querySelector("h2");
 const answersDiv = document.querySelector(".answers_div");
 // const answersBtn = document.querySelector(".answers_btn");
 const nextBtn = document.querySelector(".next_btn");
+
+// image.addEventListener("click", () => {
+//     root.style.setProperty("--primary-color", "black");
+//     root.style.setProperty("--secondary-color", "orange");
+//     image.src = "images/dark theme icon/sun.png"
+
+// });
+
+window.addEventListener("DOMContentLoaded", () => {
+    let themeColor = localStorage.getItem("theme");
+    let themeIcon = localStorage.getItem("icon");
+    document.body.classList.add(themeColor);
+    image.src = themeIcon;
+});
+
+
+image.addEventListener("click", () => {
+    document.body.classList.toggle("dark_theme");
+    if (document.body.classList.contains("dark_theme")) {
+        image.src = "images/dark theme icon/sun.png";
+        localStorage.setItem("theme", "dark_theme");
+        localStorage.setItem("icon", "images/dark theme icon/sun.png")
+    } else {
+        image.src = "images/dark theme icon/moon.png";
+        localStorage.setItem("theme", "");
+        localStorage.setItem("icon", "images/dark theme icon/moon.png")
+    };
+});
 
 let score = 0;
 let questionIndexNumber = 0;
